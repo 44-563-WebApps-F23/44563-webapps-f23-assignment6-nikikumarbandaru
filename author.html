@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Copy of sample-input.html
+    </title>
+</head>
+
+<body>
+
+    <h2>Author entry Nikith Kumar Bandaru</h2>
+
+    <form>
+        <label for="string">The hidden author name </label>
+        <input type="password" id="string" name="string" min=10 max=50 step=2 value="Dickens"> <br>
+        <label for="guess">Guess the author</label>
+        <input type="text" id="guess" name="guess" autofocus value=""> <br>
+        <button type="button" onclick="checkAuthor()">Check the guess</button>
+        <p id="result"></p>
+        <p id="good">Good Count</p>
+        <p id="bad">Bad Count</p>
+    </form> 
+    <script>
+        var good = 0
+        var oops = 0
+        function checkAuthor()
+        {
+        hidden_author = document.getElementById("string").value
+        guess = document.getElementById("guess").value
+            if(hidden_author == guess){
+                good++
+                alert("You got it right")
+                document.getElementById("good").innerText = `Good Counts: ${good}`
+            }
+            else{
+                oops++
+                alert("Sorry")
+                document.getElementById("bad").innerText = `Oops Counts: ${oops}`
+            }
+        }
+    </script>
+</body>
+</html>
