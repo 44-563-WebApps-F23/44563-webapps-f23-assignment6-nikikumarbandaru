@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>
         Copy of sample-input.html
     </title>
 </head>
-
 <body>
-
     <h2>Author entry Nikith Kumar Bandaru</h2>
-
     <form>
         <label for="string">The hidden author name </label>
         <input type="password" id="string" name="string" min=10 max=50 step=2 value="Dickens"> <br>
@@ -40,5 +36,32 @@
             }
         }
     </script>
+    <div class="container">
+        <img id="cityImage" src="Amritsar.jpg" onclick="selectImage()"  width="100" height="100" alt="Amritsar">
+    </div>
+    <script>
+        var useImage=1
+        function selectImage()
+        {
+            var image = document.getElementById("cityImage");
+            switch(useImage)
+            {
+                case 1:
+                image.src = "Bangalore.png"
+                useImage = 2;
+                break;
+                case 2:
+                image.src = "Delhi.png"
+                useImage = 3;
+                break;
+                case 3:
+                image.src = "Amritsar.jpg"
+                useImage = 1;
+                break;
+                default:
+                break;                
+            }
+        }
+    </script>    
 </body>
 </html>
