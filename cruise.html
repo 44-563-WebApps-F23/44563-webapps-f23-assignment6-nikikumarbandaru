@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Demonstrating checkbox</title>
+ </head>
+<body>
+<h2>Nikith Kumar Bandaru goes on a cruise</h2>
+<form>
+    <input type="checkbox" id="cb1" name="cb1" value="True">
+    <lable for="cb1">Shares Cabin</lable><br>
+    <input type="checkbox" id="cb2" name="cb2" value="True">
+    <lable for="cb2">Breakfast</lable><br>
+    <input type="checkbox" id="cb3" name="cb3" value="False">
+    <lable for="cb3">Pool Pass</lable><br>
+    <input type="button" value="Select a cruise" onclick="selectCruise()">
+</form>
+<p id="Results">my_cruise</p>
+<script> 
+var  my_cruise={};
+function selectCruise()
+{
+    my_cruise={};
+    if(document.getElementById("cb1").checked)
+    {
+        my_cruise["cb1"]=true;
+    }
+    else
+    my_cruise.cb1=false;
+    if(document.getElementById("cb2").checked)
+    {
+        my_cruise.breakfast=true;
+    }
+    else
+    my_cruise.breakfast=false;
+    if(document.getElementById("cb3").checked)
+    {
+    my_cruise.pool=true;
+    }
+    else
+    my_cruise.pool=false;
+    document.getElementById("Results").innerHTML="Shared: " + my_cruise["cb1"] + "| Breakfast: "+my_cruise.breakfast+"| Pool: "+my_cruise.pool;
+}
+</script>
+</body>
+</html>
