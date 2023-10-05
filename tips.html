@@ -10,9 +10,18 @@
     <input type="number" id="base" value="50"><br>
     <label for="tipPercentage">Enter the tip percent</label>
     <input type="number" id="tipPercentage" value="15"><br>
-    <input type="button" value="Show tip" onclick="tips()">
+    <input type="button" value="Show tip" onclick="tips()">    
 </form>
 <p id="Results">Tips are:</p>
+<form>
+    <input onclick="chooseOp()" type="radio" id="radio1" name="rad" value="sum" >
+    <label for="radio1">sum</label></br>
+    <input onclick="chooseOp()" type="radio" id="radio2" name="rad" value="difference">
+    <label for="radio2">diff</label></br>
+    <input onclick="chooseOp()" type="radio" id="radio3" name="rad" value="product">
+    <label for="radio3">mult</label></br>
+</form>
+<p id="result">Aggregate values</p>
 <script>
         function tips()
         {
@@ -26,6 +35,19 @@
             toShow+=(tipPercentage+i*4)+"% is "+myOutput.toFixed(2)+"; ";
         }
         document.getElementById("Results").innerHTML="Tip are: "+toShow;
+        }
+        function chooseOp()
+        {
+            var base = parseInt(document.getElementById("base").value);
+            var tipPercentage = parseInt(document.getElementById("tipPercentage").value);
+            if
+            (document.getElementById("radio1").checked)
+            document.getElementById("result").innerHTML = "sum of " + base + " and " + tipPercentage + " is " + (base + tipPercentage);
+            else if
+            (document.getElementById("radio2").checked)
+            document.getElementById("result").innerHTML = "difference of " + base + " and " + tipPercentage + " is " + (base - tipPercentage);
+            else
+            document.getElementById("result").innerHTML = "product of " + base + " and " + tipPercentage + " is " + (base * tipPercentage);         
         }
 </script>
 </body>
