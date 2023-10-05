@@ -15,6 +15,13 @@
     <input type="button" value="Select a cruise" onclick="selectCruise()">
 </form>
 <p id="Results">my_cruise</p>
+<form>
+    <label for="days">Enter the number of days</label>
+    <input type ="text" id="days" name="days" value=days><br>
+    <label for="price">Enter price</label>
+    <input type ="text" id="price" name="price" autofocus><br>
+    <input type="button" onclick="updateCruise()" value="Update the cruise">
+</form>
 <script> 
 var  my_cruise={};
 function selectCruise()
@@ -39,6 +46,14 @@ function selectCruise()
     else
     my_cruise.pool=false;
     document.getElementById("Results").innerHTML="Shared: " + my_cruise["cb1"] + "| Breakfast: "+my_cruise.breakfast+"| Pool: "+my_cruise.pool;
+}
+function updateCruise()
+{    
+    var days = document.getElementById("days").value;
+    var price = document.getElementById("price").value;
+    my_cruise["days"]=days;
+    my_cruise["price"]=price;
+    document.getElementById("Results").innerHTML="Shared: " + my_cruise["cb1"] + "| Breakfast: "+my_cruise.breakfast+"| Pool: "+my_cruise.pool+"| Days: "+my_cruise.days+"| Price: "+my_cruise.price+"|";  
 }
 </script>
 </body>
